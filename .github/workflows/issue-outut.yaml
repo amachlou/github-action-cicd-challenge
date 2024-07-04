@@ -1,0 +1,8 @@
+name: Output Issue Details
+on: [push, workflow_dispatch]
+jobs:
+    Fetch-show-details:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Issue details
+              run: echo "${{ toJson(github) }}"
