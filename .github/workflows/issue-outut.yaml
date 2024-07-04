@@ -1,11 +1,14 @@
 name: Output Issue Details
 on:
-    issues:
-        types:
-        - opened
+  issues:
+    types:
+      - opened
 jobs:
-    Fetch-show-details:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Issue details
-              run: echo "${{ toJson(github.event.issue) }}"
+  Fetch-show-details:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Issue details
+        run: |
+          echo "Issue title: ${{ github.event.issue.title }}"
+          echo "Issue body: ${{ github.event.issue.body }}"
+          echo "${{ toJson(github.event.issue) }}"
