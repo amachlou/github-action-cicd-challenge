@@ -1,9 +1,5 @@
 name: Output Issue Details
-on:
-  issues:
-    types:
-      - opened
-      - closed
+on: issues
 jobs:
   Fetch-show-details:
     runs-on: ubuntu-latest
